@@ -1,0 +1,54 @@
+header {
+  display: flex;
+  padding: 15px 25px;
+  user-select: none;
+}
+
+img {
+  transition: transform 250ms ease-out;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+ul {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  list-style-type: none;
+  margin-right: 25px;
+}
+
+li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  transition: 300ms ease-out;
+}
+
+
+li:hover {
+  transform: translateY(-2px) !important;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: white;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 250ms ease-in-out;
+}
+
+li a.active::after {
+  width: 100%;/
+}

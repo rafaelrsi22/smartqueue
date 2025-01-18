@@ -1,0 +1,26 @@
+<div class="login">
+  <h2>login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label>username</label>
+      <input
+        [(ngModel)]="username"
+        name="username"
+        autocomplete="off"
+        type="text"
+        required
+      >
+    </div>
+    <div>
+      <label>password</label>
+      <input 
+        [(ngModel)]="password"
+        name="password"
+        autocomplete="off"
+        type="password"
+        required
+      >
+    </div>
+    <button class="btn">sign in</button>
+  </form>
+</div>

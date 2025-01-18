@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", serif;
+  background-color: #060606;
+  color: white;
+}
+
+.size-6 {
+  width: 24px;
+  height: 24px;
+  color: #818181;
+}
+
+.btn {
+  font-family: "Poppins", serif;
+  border-radius: 50px;
+  font-size: 1rem;
+  padding: 5px 32px;
+  color: white;
+  background: transparent;
+  border: solid 2px white;
+  cursor: pointer;
+  transition: 300ms all ease-out;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
