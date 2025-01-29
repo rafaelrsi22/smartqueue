@@ -1,0 +1,31 @@
+<div class="hamburger-header">
+  <button class="hamburger" (click)="changeState()">
+    <svg width="25" height="20" viewBox="0 0 40 30">
+      <rect 
+        width="40" 
+        height="3" 
+        fill="#fff"
+        [@topToX]="buttonState"
+      />
+      <rect 
+        y="13" 
+        width="40" 
+        height="3" 
+        fill="#fff"
+        [@middleToX]="buttonState"
+      />
+      <rect 
+        y="26" 
+        width="40" 
+        height="3" 
+        fill="#fff"
+        [@bottomToX]="buttonState"
+      />
+    </svg>
+  </button>
+  @if (isOpen()) {
+    <ul @animateMenu>
+      <ng-content />
+    </ul>
+  }
+</div>

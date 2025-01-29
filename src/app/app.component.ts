@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
-import { QueueDashboardComponent } from './pages/queue-dashboard/queue-dashboard.component';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './pages/login/login.component';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { routeTransition } from '../route-transition';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, QueueDashboardComponent, LoginComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent],
+  animations: [routeTransition],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   isRootRoute = false;
 
-  constructor(private router: Router) {}
+  constructor(protected router: Router, protected route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.router.events.subscribe(() => {
