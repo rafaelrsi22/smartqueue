@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QueueService } from '../../services/queue.service';
+import { Queue } from '../../models/Queue';
 
 @Component({
   selector: 'app-queue-dashboard',
@@ -7,18 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './queue-dashboard.component.css'
 })
 export class QueueDashboardComponent implements OnInit {
-  queues = [
-    {
-      name: "Madero Restaurant",
-      people: 12
-    },
-    {
-      name: "Outback Steak House",
-      people: 54
-    }
-  ];
+  queues: Queue[] = [];
+
+  constructor(private queueService: QueueService) {}
 
   ngOnInit(): void {
     console.log("queue");
+    this.queueService.getQueues().subscribe((data: Queue[]) => {
+      this.queues = data;
+    })
   }
 }
