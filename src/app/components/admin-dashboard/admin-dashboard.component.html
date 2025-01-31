@@ -1,6 +1,6 @@
-<div class="dashboard">
+<div class="admin-dashboard">
   <ul>
-    @for (queue of queues; track queue.queue_id) {
+    @for (queue of this.queues; track queue.queue_id) {
       <li>
         <h2 class="queue-title">{{queue.name}}</h2>
         <div class="queue-info">
@@ -11,10 +11,18 @@
             <p>{{queue.people}}</p>
           </div>
           <button class="btn">
-            join
+            peek
           </button>
         </div>
       </li>
     }
   </ul>
+  <div class="add-container">
+    <button 
+      class="add-button" 
+      (click)="this.createQueueModalService.isOpen.set(true)"
+    >
+      +
+    </button>
+  </div>
 </div>

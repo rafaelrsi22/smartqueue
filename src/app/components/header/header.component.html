@@ -6,18 +6,40 @@
   </a>
   <ul>
     <li>
-      <a routerLink="/dashboard" routerLinkActive="active">queues</a>
+      <a 
+        routerLink="/dashboard" 
+        routerLinkActive="active"
+      >
+        queues
+      </a>
     <li>
-      <a routerLink="/login" routerLinkActive="active">admin</a>
+      <a 
+        routerLink="/login"
+        routerLinkActive="active"
+        [class.active]="matchRoutes(['/login', '/admin'])"
+      >
+        admin
+      </a>
     </li>
     <li>
     </li>
   </ul>
   <app-hamburger-header>
     <li class="hamburger-item">
-      <a routerLink="/dashboard" routerLinkActive="active">queues</a>
+      <a 
+        routerLink="/dashboard" 
+        routerLinkActive="active"
+      >
+        queues
+      </a>
     <li class="hamburger-item">
-      <a routerLink="/login" routerLinkActive="active">admin</a>
+      <a 
+        routerLink="/login" 
+        routerLinkActive="active"
+        [class.active]="matchRoutes(['/login', '/admin'])"
+      >
+        admin
+      </a>
     </li>
   </app-hamburger-header>
 </header>

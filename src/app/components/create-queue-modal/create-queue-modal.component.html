@@ -1,0 +1,16 @@
+<div 
+  [class.open]="this.createQueueModalService.isOpen()" 
+  class="create-queue-modal"
+  (click)="this.createQueueModalService.isOpen.set(false)"
+>
+  <div [class.open]="this.createQueueModalService.isOpen()" class="background"></div>
+  @if (this.createQueueModalService.isOpen()) {
+    <div 
+      class="modal-container" 
+      (click)="$event.stopPropagation()"
+      @modalEnterLeave
+    >
+        
+    </div>
+  }
+</div>
