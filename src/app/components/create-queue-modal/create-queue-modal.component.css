@@ -28,10 +28,39 @@
 }
 
 .modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0px;
   position: relative;
   background-color: #fff;
   border-radius: 25px;
   width: 40%;
-  height: 600px;
+  height: 200px;
   z-index: 20;
+}
+
+.modal-container p {
+  color: black;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.modal-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-container form div {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-container button {
+  width: 80px;
 }

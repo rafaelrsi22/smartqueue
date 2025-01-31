@@ -1,16 +1,28 @@
 <div 
   [class.open]="this.createQueueModalService.isOpen()" 
   class="create-queue-modal"
-  (click)="this.createQueueModalService.isOpen.set(false)"
+  (mousedown)="this.createQueueModalService.isOpen.set(false)"
 >
   <div [class.open]="this.createQueueModalService.isOpen()" class="background"></div>
   @if (this.createQueueModalService.isOpen()) {
     <div 
       class="modal-container" 
-      (click)="$event.stopPropagation()"
+      (mousedown)="$event.stopPropagation()"
       @modalEnterLeave
     >
-        
+      <p class="ibm">create new queue</p>
+      <form (ngSubmit)="onSubmit()">
+        <div>
+          <label for="queue-name">queue name</label>
+          <input
+            [(ngModel)]="queueName"
+            type="text" 
+            name="name" 
+            id="queue-name"
+          />
+        </div>
+        <button>create</button>
+      </form>
     </div>
   }
 </div>

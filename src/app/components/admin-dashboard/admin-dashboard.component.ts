@@ -10,13 +10,9 @@ import { CreateQueueModalService } from '../../services/create-queue-modal.servi
   styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent implements OnInit {
-  queues: Queue[] = [];
-
-  constructor(private queueService: QueueService, protected createQueueModalService: CreateQueueModalService) {}
+  constructor(protected queueService: QueueService, protected createQueueModalService: CreateQueueModalService) {}
 
   ngOnInit(): void {
-    this.queueService.getQueues().subscribe((data) => {
-      this.queues = data;
-    })
+    this.queueService.getQueues().subscribe(this.queueService.queues.set);
   }
 }

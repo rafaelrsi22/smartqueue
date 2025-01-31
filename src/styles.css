@@ -11,6 +11,10 @@ body {
   width: 100vw;
 }
 
+button {
+  user-select: none;
+}
+
 .size-6 {
   width: 24px;
   height: 24px;
@@ -29,7 +33,15 @@ body {
   transition: 300ms all ease-out;
 }
 
+.btn.small {
+  padding: 4px 16px;
+}
+
 .btn:hover {
   background-color: white;
   color: black;
+}
+
+.ibm {
+  font-family: "IBM Plex Sans", serif !important;
 }

@@ -16,6 +16,6 @@ export class QueueDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.queueService.getQueues().subscribe((data: Queue[]) => {
       this.queues = data;
-    })
+    });
   }
 }

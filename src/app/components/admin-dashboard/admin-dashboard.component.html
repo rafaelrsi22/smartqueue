@@ -1,6 +1,6 @@
 <div class="admin-dashboard">
   <ul>
-    @for (queue of this.queues; track queue.queue_id) {
+    @for (queue of this.queueService.queues(); track queue.queue_id) {
       <li>
         <h2 class="queue-title">{{queue.name}}</h2>
         <div class="queue-info">
@@ -10,8 +10,11 @@
             </svg>            
             <p>{{queue.people}}</p>
           </div>
-          <button class="btn">
+          <button class="btn small">
             peek
+          </button>
+          <button class="btn small" (click)="this.queueService.deleteQueue(queue.queue_id)">
+            delete
           </button>
         </div>
       </li>
